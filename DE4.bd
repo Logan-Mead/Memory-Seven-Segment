@@ -1,0 +1,164 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x793B789C191D604B",
+      "device": "xc7a35tcpg236-1",
+      "name": "DE4",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "blk_mem_gen_0": "",
+      "seven_segment_displa_0": ""
+    },
+    "ports": {
+      "cathode": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      },
+      "annode": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "reset": {
+        "direction": "I"
+      },
+      "addra": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "dina": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "ena": {
+        "direction": "I"
+      },
+      "wea": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "clk": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "blk_mem_gen_0": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "DE4_blk_mem_gen_0_0",
+        "parameters": {
+          "Algorithm": {
+            "value": "Minimum_Area"
+          },
+          "Coe_File": {
+            "value": "../../../../../../IPBRAM.coe"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_A": {
+            "value": "Use_ENA_Pin"
+          },
+          "Fill_Remaining_Memory_Locations": {
+            "value": "false"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Operating_Mode_A": {
+            "value": "WRITE_FIRST"
+          },
+          "Read_Width_A": {
+            "value": "4"
+          },
+          "Register_PortA_Output_of_Memory_Primitives": {
+            "value": "true"
+          },
+          "Use_Byte_Write_Enable": {
+            "value": "false"
+          },
+          "Use_RSTA_Pin": {
+            "value": "false"
+          },
+          "Write_Depth_A": {
+            "value": "16"
+          },
+          "Write_Width_A": {
+            "value": "4"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "seven_segment_displa_0": {
+        "vlnv": "xilinx.com:user:seven_segment_display_VHDL:1.0",
+        "xci_name": "DE4_seven_segment_displa_0_0"
+      }
+    },
+    "nets": {
+      "seven_segment_displa_0_cathode": {
+        "ports": [
+          "seven_segment_displa_0/cathode",
+          "cathode"
+        ]
+      },
+      "seven_segment_displa_0_annode": {
+        "ports": [
+          "seven_segment_displa_0/annode",
+          "annode"
+        ]
+      },
+      "wea_1": {
+        "ports": [
+          "wea",
+          "blk_mem_gen_0/wea"
+        ]
+      },
+      "ena_1": {
+        "ports": [
+          "ena",
+          "blk_mem_gen_0/ena"
+        ]
+      },
+      "blk_mem_gen_0_douta": {
+        "ports": [
+          "blk_mem_gen_0/douta",
+          "seven_segment_displa_0/douta"
+        ]
+      },
+      "dina_1": {
+        "ports": [
+          "dina",
+          "blk_mem_gen_0/dina"
+        ]
+      },
+      "addra_1": {
+        "ports": [
+          "addra",
+          "blk_mem_gen_0/addra",
+          "seven_segment_displa_0/addra"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "clk",
+          "blk_mem_gen_0/clka",
+          "seven_segment_displa_0/clk"
+        ]
+      },
+      "reset_1": {
+        "ports": [
+          "reset",
+          "seven_segment_displa_0/reset"
+        ]
+      }
+    }
+  }
+}
